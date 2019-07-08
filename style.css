@@ -40,6 +40,38 @@ h1{
     color:white;
   }
 
+  h3{
+    margin: -30px 10px 10px 10px;
+    border-top: #f1f1f1;
+    border-bottom: #f1f1f1;
+    color: aliceblue;
+    position: absolute;
+    left: 25%;
+  }
+
+    
+
+  #card1{
+   
+  background-color: #818181;
+  color: #f1f1f1;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+
+  }
+
+  #card2{
+    background-color: #818181;
+    color: #f1f1f1;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+  
+    }
+
   #video{
   display: block;
   margin-left: auto;
