@@ -41,9 +41,10 @@ h1{
   }
 
   #video{
-    position: absolute;
-    top: 20%;
-    left: 70px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
   }
 
   #video2{
@@ -128,8 +129,8 @@ h1{
     height:100vh;
     padding-top:20vh;
     background-color: #111;
-    /* background-image: url("https://www.gannett-cdn.com/presto/2019/05/06/USAT/5a72df5b-8627-454e-9b97-108a667932d3-bfb1300_trlcomp_v246.1054.jpg?width=1280");
-    background-size: cover; */
+    background-image: url("https://www.gannett-cdn.com/presto/2019/05/06/USAT/5a72df5b-8627-454e-9b97-108a667932d3-bfb1300_trlcomp_v246.1054.jpg?width=1280");
+    background-size: cover;
     z-index: 2;
     position: relative;
 }
@@ -143,6 +144,10 @@ h1{
     z-index: 2;
     position: relative;
 }
+.regular-wrapper3{
+  background-color: #111;
+}
+
 .content {
     margin: 0 auto;
     padding: 50px;
