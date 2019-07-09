@@ -2,16 +2,22 @@ html {
     overflow: hidden;
 }
 body {
+    position: relative;
     margin: 0;
     font-size: 26px;
     font-family: 'Permanent Marker', cursive;
-    /* color: #ffffff; */
-    height: 100vh;
-    perspective: 1px;
-    transform-style: preserve-3d;
-    overflow-x:hidden;
-    overflow-y:auto;
+   
+} 
+
+.xyz{
+  height: 100vh;
+  transform-style: preserve-3d; 
+  overflow-x:hidden;
+  overflow-y:auto; 
+  perspective: 1px;
+  background-color: aqua; 
 }
+  
 
 h1{
     font-size: 300px;
@@ -33,10 +39,13 @@ h1{
   }
   
   #menu{
-    position: fixed;
+    
+    position:fixed;
     top: 5%;
     left: 2%;
     color: white;
+    display:inline-block;
+    z-index: 9999; 
   }
 
   h3{
@@ -186,14 +195,19 @@ h1{
   
   .socal{
     display: block;
-    margin-left: auto;
+    /* margin-left: auto;
     margin-right: auto;
-    width: 13%;
+    width: 13%; */
     position:relative;
-    bottom: -475;
+    left: 45%;
+    top: 60%;
   }
   .card-body{
     background-color: #818181;
+  }
+
+  #credit{
+    text-align: center;
   }
 
   @media screen and (max-height: 450px) {
