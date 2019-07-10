@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Marvel Time Line</title>
+</head>
+<body>
+<style>
+    * {
+      box-sizing: border-box;
+    }
+    
+    body {
+      /* background-image: url("https://ak9.picdn.net/shutterstock/videos/18681329/thumb/1.jpg?i10c=img.resize(height:160)");
+      background-size: cover;  */
+      background-color: black;
+      font-family: Helvetica, sans-serif;
+    }
+    
+    /* The actual timeline (the vertical ruler) */
+    .timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    
+    /* The actual timeline (the vertical ruler) */
+    .timeline::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      background-color: white;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+    }
+    
+    /* Container around content */
+    .container {
+      padding: 10px 40px;
+      position: relative;
+      background-color: inherit;
+      width: 50%;
+    }
+    
+    /* The circles on the timeline */
+    .container::after {
+      content: '';
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      right: -17px;
+      background-color: gray;
+      border: 4px solid red;
+      top: 15px;
+      border-radius: 50%;
+      z-index: 1;
+    }
+    
+    /* Place the container to the left */
+    .left {
+      left: 0;
+    }
+    
+    /* Place the container to the right */
+    .right {
+      left: 50%;
+    }
+    
+    /* Add arrows to the left container (pointing right) */
+    .left::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      right: 30px;
+      border: medium solid white;
+      border-width: 10px 0 10px 10px;
+      border-color: transparent transparent transparent white;
+    }
+    
+    /* Add arrows to the right container (pointing left) */
+    .right::before {
+      content: " ";
+      height: 0;
+      position: absolute;
+      top: 22px;
+      width: 0;
+      z-index: 1;
+      left: 30px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+    }
+    
+    /* Fix the circle for containers on the right side */
+    .right::after {
+      left: -16px;
+    }
+    
+    /* The actual content */
+    .content {
+      padding: 20px 30px;
+      background-color:gray;
+      position: relative;
+      border-radius: 6px;
+    }
+    
+    /* Media queries - Responsive timeline on screens less than 600px wide */
+    @media screen and (max-width: 600px) {
+      /* Place the timelime to the left */
+      .timeline::after {
+      left: 31px;
+      }
+      
+      /* Full-width containers */
+      .container {
+      width: 100%;
+      padding-left: 70px;
+      padding-right: 25px;
+      }
+      
+      /* Make sure that all arrows are pointing leftwards */
+      .container::before {
+      left: 60px;
+      border: medium solid white;
+      border-width: 10px 10px 10px 0;
+      border-color: transparent white transparent transparent;
+      }
+    
+      /* Make sure all circles are at the same spot */
+      .left::after, .right::after {
+      left: 15px;
+      }
+      
+      /* Make all right containers behave like the left ones */
+      .right {
+      left: 0%;
+      }
+    }
+
+    .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 9999;
+    top: 0%;
+    left: 0%;
+    background-color: #111;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+  
+  #menu{
+    
+    position:fixed;
+    top: 5%;
+    left: 2%;
+    color: white;
+    display:inline-block;
+    z-index: 9999; 
+  }
+
+    .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    
+  }
+
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .parallax-wrapper4{
+    background-image: url("https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzEwNS80ODgvb3JpZ2luYWwvc2h1dHRlcnN0b2NrXzEwNDAxNzE2OS5qcGc=");
+      background-size: cover;
+  }
+
+  .parallax-wrapper5{
+    background-image: url("https://blog.vkngjewelry.com/wp-content/uploads/2019/04/Nine-realms-norse-mythology-1024x576.jpg");
+      background-size: cover;
+  }
+    </style>
+    </head>
+    <body>
+            <div style="font-size:30px;cursor:pointer" id="menu" onclick="openNav()">&#9776;</div>   
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLd5gvV5XowKolcsdvo1vNorEMkOndqjcE2jp_hJ5JZDgNu60a" alt="Girl in a jacket" style="width:20px;height:20px;"> About</a>
+                <a href="#"><img src="http://www.iconninja.com/files/238/836/869/marvel-avangers-shield-eagle-icon.svg" alt="Girl in a jacket" style="width:20px;height:20px;"> Movie</a>
+                <a href="#"><img src="http://chittagongit.com/download/311845" alt="Girl in a jacket" style="width:20px;height:20px;"> TV</a>
+                <a href="#"><img src="https://icons-for-free.com/iconfiles/png/512/bow+and+arrow+hawkeye+marvel+icon-1320085978912614688.png" alt="Girl in a jacket" style="width:20px;height:20px;"> Comic's</a>
+                <a href="#"><img src="https://cdn.iconscout.com/icon/free/png-256/the-punisher-marvel-super-hero-earth-saver-avenger-28703.png" alt="Girl in a jacket" style="width:20px;height:20px;"> MCU Time Line</a>
+                <a href="#"><img src="https://seeklogo.com/images/M/marvel-comics-logo-31D9B4C7FB-seeklogo.com.png" alt="Girl in a jacket" style="width:20px;height:20px;"> online media</a>
+                <a href="#"><img src="https://i.pinimg.com/originals/02/8f/07/028f0724e4520d93f7f45272b8ef3076.jpg" alt="Girl in a jacket" style="width:20px;height:20px;"> Live Chat</a>
+                <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLd5gvV5XowKolcsdvo1vNorEMkOndqjcE2jp_hJ5JZDgNu60a" alt="Girl in a jacket" style="width:20px;height:20px;"> Blog</a>
+              </div>
+    
+    <div class="timeline">
+            <div class="parallax-wrapper4">
+      <div class="container left">
+        <div class="content">
+                <h2>???</h2>
+                <h3>Before the Universe Began:</h3>
+                <p>Six singularities existed: Space, Mind, Reality, Power, Time, Soul
+                        Dark Elves arose from the darkness before traveling to the Nine Realms to rule over them all from Svartalfheim, the Dark World.</p>
+                <img src="http://cdn.collider.com/wp-content/uploads/2017/07/infinity-stones.jpg" width="100%" class="card-img" alt="...">
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>???</h2>
+          <h3>After the Universe Began:</h3>
+          <p>Cosmic Entities Death, Entropy, Infinity, and Eternity created the Infinity Stones from these singularities.
+            Elders of the Universe: The Collector and the Grandmaster come into being.</p>
+          <img src="https://static2.srcdn.com/wordpress/wp-content/uploads/2018/07/Celestials-and-the-One-Above-All.jpg" width="100%" class="card-img" alt="...">
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>???</h2>
+          <h3>Several Million Years Ago:</h3>
+          <p>Ego the Living Planet comes into being as a Celestial, a member of a powerful, primordial race.</p>
+          <img src="https://qph.fs.quoracdn.net/main-qimg-8ecc378b1ed872c3b495a0d19d824c99" width="100%" class="card-img" alt="...">
+        </div>
+      </div>
+    </div>
+    <div class="parallax-wrapper5">
+      <div class="container right">
+        <div class="content">
+          <h2>2012</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>2011</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>2007</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>2017</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+    </div>
+      <div class="container right">
+        <div class="content">
+          <h2>2016</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>2015</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>2012</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>2011</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>2007</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>2017</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>2016</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>2015</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>2012</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>2011</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>2007</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>2017</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>2016</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>2015</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>2012</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container left">
+        <div class="content">
+          <h2>2011</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+      <div class="container right">
+        <div class="content">
+          <h2>2007</h2>
+          <p>Lorem ipsum dolor sit amet, quo ei simul congue exerci, ad nec admodum perfecto mnesarchum, vim ea mazim fierent detracto. Ea quis iuvaret expetendis his, te elit voluptua dignissim per, habeo iusto primis ea eam.</p>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Script -->
+    <script src="app.js"></script>
+    </body>
+    </html>
+    
