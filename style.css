@@ -33,6 +33,9 @@ h1{
     top: 0%;
     left: 0%;
     background-color: #111;
+    background-image: url(https://images.unsplash.com/photo-1505489435671-80a165c60816?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
+    background-size:87%;
+    background-attachment: fixed;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -209,7 +212,9 @@ h1{
   #credit{
     text-align: center;
   }
-
+.body1{
+  margin: 20px 20px 20px 20px;
+}
   @media screen and (max-height: 450px) {
     .sidenav {padding-top: 15px;}
     .sidenav a {font-size: 18px;}
