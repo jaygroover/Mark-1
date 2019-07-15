@@ -12,7 +12,7 @@ body{
  background-image: url(https://d9np3dj86nsu2.cloudfront.net/image/0c77b130e0a9d98c838ba8570a226de0);   
 }    
 #test{
-    opacity: .97;
+    opacity: .99;
     background-color: gray;  
     border: 2px solid black;
     border-style: solid;
@@ -20,6 +20,7 @@ body{
     height: auto;
     color:white;
     width: 50%; 
+    
 }
     
 
@@ -32,11 +33,11 @@ button{
 position: absolute;
 top: 162PX;
 }
-
+/* 
 img{
 width: 200px !important;
 height: 200px;    
-}
+} */
 
 
 .size { position:relative }
@@ -136,14 +137,142 @@ input{
       background-size: cover;
       background-position:20px;
     }
+
+    #ironMan{
+  /* background-image:url(http://www.westcpapc.com/wp-content/uploads/2014/09/Hands-Holding-World.jpg); 
+  background-position: 0px; */
+  background-size: cover;
+  background-color: #000;
+}  
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+    opacity:0.99;
+  }
+
+  
+  /* Modal Content/Box */
+  .modal-content {
+    background-color:white;
+    color:black;
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+  }
+
+  
+  /* The Close Button (x) */
+  .close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: red;
+    cursor: pointer;
+  }
+
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+    
+  }
+
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 9999;
+    top: 0%;
+    left: 0%;
+    background-color: #111;
+    background-image: url(https://images.unsplash.com/photo-1505489435671-80a165c60816?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80);
+    background-position: 20px;
+    background-size:100%;
+    background-attachment: fixed;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+    text-align: left;
+  }
+  
+  #menu{
+    
+    position:absolute;
+    top: 5%;
+    left: 2%;
+    color: white;
+    display:inline-block;
+    z-index: 9999; 
+  }
+
+  .banner{
+    width: 100%;
+    height: 40vh;
+    background-image: url("https://superheromoviesranked.files.wordpress.com/2014/07/whxoqergj763l9c1hj4almeogmh.jpg?w=820&h=312&crop=1");
+    background-size: cover;
+    background-position:20px;
+  }
+
+  .poster-img{
+    width: 192px !important;
+    height: 300px !important;
+    margin: 20px 20px 20px 20px;
+  }
+  
+
+
      
 </style>
 
 <body>
 
-        <div class="header">
-                
-              </div>
+    <div class="header">
+        <div style="font-size:30px;cursor:pointer" id="menu" onclick="openNav()">&#9776;</div>   
+        <div id="mySidenav" class="sidenav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLd5gvV5XowKolcsdvo1vNorEMkOndqjcE2jp_hJ5JZDgNu60a" alt="Girl in a jacket" style="width:20px;height:20px;"> About</a>
+            <a href="#"><img src="http://www.iconninja.com/files/238/836/869/marvel-avangers-shield-eagle-icon.svg" alt="Girl in a jacket" style="width:20px;height:20px;"> Movie</a>
+            <a href="#"><img src="http://chittagongit.com/download/311845" alt="Girl in a jacket" style="width:20px;height:20px;"> TV</a>
+            <a href="#"><img src="https://icons-for-free.com/iconfiles/png/512/bow+and+arrow+hawkeye+marvel+icon-1320085978912614688.png" alt="Girl in a jacket" style="width:20px;height:20px;"> Comic's</a>
+            <a href="#"><img src="https://cdn.iconscout.com/icon/free/png-256/the-punisher-marvel-super-hero-earth-saver-avenger-28703.png" alt="Girl in a jacket" style="width:20px;height:20px;"> MCU Time Line</a>
+            <a href="#"><img src="https://seeklogo.com/images/M/marvel-comics-logo-31D9B4C7FB-seeklogo.com.png" alt="Girl in a jacket" style="width:20px;height:20px;"> online media</a>
+            <a href="#"><img src="https://i.pinimg.com/originals/02/8f/07/028f0724e4520d93f7f45272b8ef3076.jpg" alt="Girl in a jacket" style="width:20px;height:20px;"> Live Chat</a>
+            <a href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQLd5gvV5XowKolcsdvo1vNorEMkOndqjcE2jp_hJ5JZDgNu60a" alt="Girl in a jacket" style="width:20px;height:20px;"> Blog</a>
+          </div>           
+        </div>
               
               <div id="navbar">
                 <a href=#phase1>Phase I</a>
@@ -156,10 +285,11 @@ input{
                     <h1 id="phase1">Phase I</h1> 
                     <br>
                     <br>
-                <!-- </div>   -->
+                <!-- </div>-->
+                <!--iron man-->
                     <div class = row>
                      <div class= "col-md-4">
-                     <img src="http://www.savethecat.com/wp-content/uploads/2018/05/Iron_Man_artposter.jpg"  class="card-img" alt="...">      
+                        <a onclick="document.getElementById('ironMan').style.display='block'"><img src="https://www.dvdsreleasedates.com/posters/800/A/Avengers-Endgame-2019-movie-poster.jpg" id="poster" class="card-img" alt="..."></a>    
                        
                      </div>
                      <div class= "col-md-8">
@@ -776,12 +906,45 @@ input{
        <br>
        <br>
        <br>
+       <div class="container">
+        <div id="ironMan" class="modal">
+      
+            <form class="modal-content animate" action="/action_page.php">
+              <div class="imgcontainer">
+                <span onclick="document.getElementById('ironMan').style.display='none'" class="close" title="Close Modal">&times;</span>
+            </div>
+               
+<!--Start of box-->
+<div class="banner">
+
+    <!--empty banner-->
+</div>
+<br>
+<br>
+<br>
+        <div class="row">
+            <div class="col-md-3">
+             <img src="https://terrigen-cdn-dev.marvel.com/content/prod/1x/ironman_lob_crd_01_4.jpg" class="card-img poster-img" alt="Guardians of the Galaxy image">     
+            </div>
+            <div class="col-md-3 info">
+              <p>2008's Iron Man tells the story of Tony Stark, a billionaire industrialist and genius inventor who is kidnapped and forced to build a devastating weapon. Instead, using his intelligence and ingenuity, Tony builds a high-tech suit of armor and escapes captivity. When he uncovers a nefarious plot with global implications, he dons his powerful armor and vows to protect the world as Iron Man.</p>  
+           </div>
+        </div>   
+
+
+
+<!--end of box-->
+                 
+    </div>
+        </div>  
+
 
 
 
 
                   
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>               
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>  
+<script src="app.js"></script>             
  <script>
 (function($){
 	$.fn.styleddropdown = function(){
